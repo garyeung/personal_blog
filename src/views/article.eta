@@ -1,0 +1,5 @@
+<% layout('./layout')%>
+
+<h1><%= it.article. title%></h1>
+<p class="article-date"><%= it.article.date %></p>
+<%~it.article.content%>

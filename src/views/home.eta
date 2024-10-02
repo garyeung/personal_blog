@@ -1,0 +1,16 @@
+<!-- home.eta -->
+<% layout('./layout') %>
+
+<h1>Personal Blog</h1>
+<% if (it.articles.length === 0) { %>
+  <p>No articles found.</p>
+<% } else { %>
+  <ul class="article-list">
+    <% it.articles.forEach(function(article) { %>
+      <li>
+          <h3 class=""><a class="article-title" href="/article/<%= article.id %>"><%= article.title %></a></h3>
+          <p class="article-date"><%= article.date%></p>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>

@@ -1,0 +1,23 @@
+<!-- newArticle.eta -->
+<% layout('./layout') %>
+
+<h1>New Article</h1>
+
+<form id="newArticleForm" action="/admin/add" method="POST">
+  <div class="article-flex">
+    <label for="title">Article Title</label>
+    <input type="text" id="title" name="title" required>
+  </div>
+
+  <div class="article-flex">
+    <label for="date">Publishing Date</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+
+  <div class="article-flex">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" rows="20" required style="white-space: pre-wrap;"></textarea>
+  </div>
+
+  <button class="article-button" type="submit">Publish</button>
+</form>

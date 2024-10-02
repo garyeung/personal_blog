@@ -1,0 +1,10 @@
+# Node modules
+node_modules/
+
+# Developing Things 
+Requirements.md*
+problems.md*
+Implement.md*
+
+# package
+package-lock.json

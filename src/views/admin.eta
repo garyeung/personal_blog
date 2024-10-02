@@ -1,0 +1,25 @@
+
+<!-- admin.eta -->
+<% layout('./layout') %>
+
+<div class="admin-header">
+  <h1>Personal Blog</h1>
+  <a id="addArticle" href="/admin/add">+ Add</a>
+</div>
+<% if (it.articles.length === 0) { %>
+  <p>No articles found.</p>
+<% } else { %>
+  <ul class="article-list">
+    <% it.articles.forEach(function(article) { %>
+      <li>
+        <h3><a class="article-title" href="/article/<%= article.id %>"><%= article.title %></a></h3>
+        <div class="article-date">
+          <a class= "editArticle" data-id="<%= article.id %>" href="/admin/edit/<%= article.id %>">Edit</a>
+          <form action="/admin/delete/<%= article.id%>" method="POST" style="display: inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>

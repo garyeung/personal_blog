@@ -1,0 +1,23 @@
+<!-- editArticle.eta -->
+<% layout('./layout') %>
+
+<h1>Update Article</h1>
+
+<form id="editArticleForm" action="/admin/edit/<%= it.article.id%>" method="POST">
+  <div class="article-flex">
+    <label for="title">Article Title</label>
+    <input type="text" id="title" name="title" value="<%= it.article.title %>" required>
+  </div>
+
+  <div class="article-flex">
+    <label for="date">Publishing Date</label>
+    <input type="date" id="date" name="date" value="<%= it.article.date %>" required>
+  </div>
+
+  <div class="article-flex">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" rows="10" required><%= it.article.content %></textarea>
+  </div>
+
+  <button class="article-button" type="submit">Update Article</button>
+</form>
